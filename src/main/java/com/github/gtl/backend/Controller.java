@@ -39,12 +39,12 @@ public class Controller {
 	
 	@GetMapping("dict")
 	Flux<DictionaryEntry> dict(@RequestParam(required = false) String filter) {
-		return dictRep.findAll().sort().limitRequest(10);
+		return dictRep.findAll().sort();
 	}
 	
 	@GetMapping("text")
 	Flux<TextEntry> text() {
-		return textRep.findAll().sort().limitRequest(10);
+		return textRep.findAll().sort().limitRequest(20);
 	}
 	
 	@PostMapping("import/dict")
